@@ -20,6 +20,7 @@ export const register = async (req, res) => {
       email: user.email,
     });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: 'Server error during registration' });
   }
 };
@@ -50,6 +51,7 @@ export const login = async (req, res) => {
       res.status(401).json({ message: 'Invalid email or password' });
     }
   } catch (error) {
+    console.error(error)
     res.status(500).json({ message: 'Server error during login' });
   }
 

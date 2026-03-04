@@ -11,6 +11,8 @@ import bcrypt from 'bcryptjs';
 
 // 1. Define the Schema
 const userSchema = new mongoose.Schema({
+ 
+
   email: { 
     type: String, 
     required: true, 
@@ -18,7 +20,8 @@ const userSchema = new mongoose.Schema({
   },
   password: { 
     type: String, 
-    required: true 
+    required: true,
+    minlength: 6  
   }
 });
 
@@ -33,7 +36,8 @@ userSchema.pre('save', async function(next) {
     this.password = await bcrypt.hash(this.password, salt);
     next();
   } catch (error) {
-    next(error);
+    console.error("Error hashing password:", error);
+    
   }
 
 
