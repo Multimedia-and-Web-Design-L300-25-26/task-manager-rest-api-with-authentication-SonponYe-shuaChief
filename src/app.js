@@ -30,3 +30,4 @@ const connectDB = async () => {
 };
 
 connectDB();
+
