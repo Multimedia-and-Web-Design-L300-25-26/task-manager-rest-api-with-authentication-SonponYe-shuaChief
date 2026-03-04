@@ -59,3 +59,7 @@ describe("Task Routes", () => {
   });
 
 });
+
+afterAll(async () => {
+  await mongoose.connection.close();
+});

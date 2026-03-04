@@ -32,4 +32,12 @@ describe("Auth Routes", () => {
     token = res.body.token;
   });
 
+
+
+
+});
+
+
+afterAll(async () => {
+  await mongoose.connection.close();
 });
