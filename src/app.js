@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoutes from "./routes/authRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
+import authMiddleware from "./middleware/authMiddleware.js";
 import connectDB from "./config/db.js";
 
 const app = express();
