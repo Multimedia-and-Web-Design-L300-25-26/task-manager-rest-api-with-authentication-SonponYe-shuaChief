@@ -1,4 +1,5 @@
 import request from "supertest";
+import mongoose from "mongoose";
 import app from "../src/app.js";
 
 let token;
@@ -58,4 +59,8 @@ describe("Task Routes", () => {
     expect(Array.isArray(res.body)).toBe(true);
   });
 
+});
+
+afterAll(async () => {
+  await mongoose.connection.close();
 });
